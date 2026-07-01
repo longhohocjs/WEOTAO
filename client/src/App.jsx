@@ -353,6 +353,7 @@ function App() {
               alt="iPhone Light Background"
               className="block dark:hidden w-full h-full object-cover lg:object-contain transform scale-110 lg:scale-105 object-center opacity-90 mix-blend-multiply transition-all duration-500"
               draggable="false"
+              fetchpriority="high"
             />
 
             {/* ẢNH DARK MODE: Ảnh góc nghiêng nghệ thuật phóng to căn giữa nguyên bản */}
@@ -361,6 +362,7 @@ function App() {
               alt="iPhone Dark Background"
               className="hidden dark:block w-full h-full object-cover lg:object-contain transform scale-110 lg:scale-105 object-center opacity-55 mix-blend-screen transition-all duration-500"
               draggable="false"
+              fetchpriority="high"
             />
 
             {/* Lớp phủ gradient thông minh làm mờ chân trang (Light: mờ trắng, Dark: mờ đen) */}
