@@ -265,7 +265,7 @@ function App() {
         {/* 1. NAVBAR */}
         <nav className="border-b border-gray-200 dark:border-neutral-800 backdrop-blur-md sticky top-0 z-50 px-6 py-4 flex justify-between items-center">
           <div className="text-2xl font-black tracking-wider bg-gradient-to-r from-blue-600 to-indigo-500 bg-clip-text text-transparent">
-            APPLE<span className="text-slate-800 dark:text-white">NEXUS</span>
+            WEO<span className="text-slate-800 dark:text-white">TÁO</span>
           </div>
 
           <div className="flex items-center gap-6">
@@ -863,7 +863,6 @@ function App() {
           </div>
         </div>
         {/* 5. COMPARE MODELS */}
-
         <section className="px-6 lg:px-24 py-24 bg-white dark:bg-[#090909] transition-colors duration-500">
           <div className="max-w-6xl mx-auto">
             {/* Tiêu đề */}
@@ -1123,98 +1122,7 @@ function App() {
           </div>
         )}
 
-        {/* 8. CHATBOT TƯ VẤN CÔNG NGHỆ APPLE */}
-        <div className="fixed bottom-6 right-6 z-50">
-          {isChatOpen ? (
-            <div className="w-80 h-96 bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-800 rounded-2xl shadow-2xl flex flex-col overflow-hidden">
-              <div className="bg-gradient-to-r from-blue-600 to-indigo-500 p-4 text-white flex justify-between items-center">
-                <span className="font-bold text-sm">Apple Expert Bot</span>
-                <button
-                  onClick={() => setChatOpen(false)}
-                  className="text-white/80 text-xs bg-black/20 px-2 py-1 rounded-md cursor-pointer"
-                >
-                  Đóng
-                </button>
-              </div>
-              <div className="flex-1 p-4 overflow-y-auto space-y-3 text-sm custom-scrollbar">
-                {chatHistory.map((msg, idx) => (
-                  <div
-                    key={idx}
-                    className={`flex ${msg.sender === "user" ? "justify-end" : "justify-start"}`}
-                  >
-                    <div
-                      className={`max-w-[75%] p-3 rounded-2xl ${msg.sender === "user" ? "bg-blue-600 text-white rounded-tr-none" : "bg-gray-100 dark:bg-neutral-800 text-slate-800 dark:text-gray-200 rounded-tl-none"}`}
-                    >
-                      {msg.text}
-                    </div>
-                  </div>
-                ))}
-                {isTyping && (
-                  <div className="text-xs italic text-gray-400">
-                    AI đang tra cứu dữ liệu Apple...
-                  </div>
-                )}
-              </div>
-              <form
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  const inputEl = e.target.elements.chatInput;
-                  const text = inputEl.value.trim();
-                  if (!text) return;
-                  setChatHistory((prev) => [...prev, { sender: "user", text }]);
-                  inputEl.value = "";
-                  setIsTyping(true);
-                  fetch("http://localhost/textTKLDP/server/chatbot.php", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ message: text }),
-                  })
-                    .then((res) => res.json())
-                    .then((data) => {
-                      setChatHistory((prev) => [
-                        ...prev,
-                        { sender: "bot", text: data.reply },
-                      ]);
-                      setIsTyping(false);
-                    })
-                    .catch(() => {
-                      setChatHistory((prev) => [
-                        ...prev,
-                        {
-                          sender: "bot",
-                          text: "Kết nối máy chủ trợ lý gián đoạn.",
-                        },
-                      ]);
-                      setIsTyping(false);
-                    });
-                }}
-                className="p-3 border-t border-gray-100 dark:border-neutral-800 flex gap-2"
-              >
-                <input
-                  name="chatInput"
-                  type="text"
-                  placeholder="Hỏi về iPhone 17 Pro Max..."
-                  className="flex-1 px-3 py-2 bg-gray-50 dark:bg-neutral-800 border rounded-xl text-xs outline-none text-slate-800 dark:text-gray-100"
-                />
-                <button
-                  type="submit"
-                  className="px-3 py-2 bg-blue-600 text-white rounded-xl text-xs font-bold cursor-pointer"
-                >
-                  Gửi
-                </button>
-              </form>
-            </div>
-          ) : (
-            <button
-              onClick={() => setChatOpen(true)}
-              className="w-14 h-14 bg-gradient-to-tr from-blue-600 to-indigo-500 rounded-full shadow-lg flex items-center justify-center text-white cursor-pointer hover:scale-110 transition-transform"
-            >
-              <span className="text-xs font-bold">iAI</span>
-            </button>
-          )}
-        </div>
-
-        {/* 9. FOOTER */}
+        {/* 8. FOOTER */}
         <footer className="bg-slate-50 dark:bg-[#090909] border-t border-slate-200/60 dark:border-neutral-800/60 transition-colors duration-500 font-sans">
           {/* =========================================================
            KHỐI 1: VALUE PROPOSITIONS (TIỆN ÍCH MUA HÀNG)
