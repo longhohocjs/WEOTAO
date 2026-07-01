@@ -218,7 +218,7 @@ function App() {
 
   // Lấy danh sách sản phẩm từ Backend PHP (Dữ liệu MySQL động)
   useEffect(() => {
-    fetch("http://localhost/textTKLDP/server/products.php")
+    fetch("https://weotao-backend.onrender.com")
       .then((res) => res.json())
       .then((data) => {
         if (!data.error) setProducts(data);
