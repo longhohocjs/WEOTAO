@@ -217,11 +217,30 @@ function App() {
   ];
 
   // Lấy danh sách sản phẩm từ Backend PHP (Dữ liệu MySQL động)
+  // useEffect(() => {
+  //   fetch("https://weotao-backend.onrender.com/products.php")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       if (!data.error) setProducts(data);
+  //       setLoading(false);
+  //     })
+  //     .catch((err) => {
+  //       console.error("Lỗi kết nối API sản phẩm:", err);
+  //       setLoading(false);
+  //     });
+  // }, []);
+
   useEffect(() => {
-    fetch("https://weotao-backend.onrender.com")
-      .then((res) => res.json())
+    fetch("https://weotao-backend.onrender.com/products.php")
+      .then((res) => {
+        if (!res.ok) throw new Error("Lỗi kết nối máy chủ");
+        return res.json();
+      })
       .then((data) => {
-        if (!data.error) setProducts(data);
+        // Đảm bảo dữ liệu nhận về là một mảng
+        if (data && !data.error) {
+          setProducts(data);
+        }
         setLoading(false);
       })
       .catch((err) => {
@@ -505,14 +524,16 @@ function App() {
 
                     <div className="p-6 pt-0 border-t border-gray-100 dark:border-neutral-800/50 mt-4 flex items-center justify-between">
                       <span className="text-xl font-extrabold text-slate-900 dark:text-white">
-                        {Intl.NumberFormat("vi-VN", {
-                          style: "currency",
-                          currency: "VND",
-                        }).format(product.price)}
+                        {typeof product.price === "number"
+                          ? Intl.NumberFormat("vi-VN", {
+                              style: "currency",
+                              currency: "VND",
+                            }).format(product.price)
+                          : product.price}
                       </span>
                       <button
                         onClick={() => addToCart(product)}
-                        className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900 text-white dark:bg-white dark:text-black font-semibold text-sm  hover:scale-110  transition-all duration-300 active:scale-95 cursor-pointer shadow-md"
+                        className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900 text-white dark:bg-white dark:text-black font-semibold text-sm hover:scale-110 transition-all duration-300 active:scale-95 cursor-pointer shadow-md"
                       >
                         Chọn mua
                       </button>
