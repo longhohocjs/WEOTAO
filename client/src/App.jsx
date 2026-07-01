@@ -97,7 +97,7 @@ function App() {
       displayTech: "Super Retina XDR",
       chip: "Chip A19 Pro",
       battery: "Thời gian xem video Lên đến 31 giờ",
-      img: "https://24hstore.vn/images/products/2025/09/10/large/iphone-17-pro-cam-01.png", // Thay bằng ảnh thực tế
+      img: "D:\iphone-17-pro-cam-01.png", // Thay bằng ảnh thực tế
     },
     {
       id: "plus",
@@ -358,8 +358,7 @@ function App() {
 
             {/* ẢNH DARK MODE: Ảnh góc nghiêng nghệ thuật phóng to căn giữa nguyên bản */}
             <img
-              src="https://storage.ghost.io/c/59/cf/59cfc607-b1ff-45a1-b644-37fe5a6bf7b1/content/images/size/w2000/2025/09/Screenshot-2025-09-24-at-12.20.51---PM-1.png"
-              alt="iPhone Dark Background"
+              src="D:\Screenshot-2025-09-24-at-12.20.51---PM-1.png"
               className="hidden dark:block w-full h-full object-cover lg:object-contain transform scale-110 lg:scale-105 object-center opacity-55 mix-blend-screen transition-all duration-500"
               draggable="false"
               fetchpriority="high"
