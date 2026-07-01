@@ -1,0 +1,39 @@
+@import "tailwindcss";
+@variant dark (&:where(.dark, .dark *));
+
+/* Giữ lại hiệu ứng chuyển đổi mượt mà cho Dark Mode */
+* {
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Tùy biến thanh cuộn cho khu vực giỏ hàng */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px; /* Độ rộng của thanh cuộn nhỏ nhắn, tinh tế */
+}
+
+/* Phần nền đường chạy của thanh cuộn */
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent; /* Để trong suốt để ăn theo màu nền modal */
+}
+
+/* Phần cục kéo (Thumb) - Chế độ Light Mode */
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1; /* Màu gray-300 */
+  border-radius: 10px;
+}
+
+/* Phần cục kéo (Thumb) - Chế độ Dark Mode */
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #404040; /* Màu neutral-700 hài hòa với neutral-900 */
+}
+
+/* Hiệu ứng khi hover vào cục kéo */
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #94a3b8;
+}
+.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #525252;
+}
