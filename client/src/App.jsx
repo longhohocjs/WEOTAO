@@ -132,8 +132,6 @@ function App() {
     });
   }, []);
 
-  const [products, setProducts] = useState([]);
-
   const [performanceMode, setPerformanceMode] = useState("stock");
 
   const [isCartModalOpen, setCartModalOpen] = useState(false);
