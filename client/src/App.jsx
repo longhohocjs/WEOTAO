@@ -358,7 +358,7 @@ function App() {
 
             {/* ẢNH DARK MODE: Ảnh góc nghiêng nghệ thuật phóng to căn giữa nguyên bản */}
             <img
-              src="D:\Screenshot-2025-09-24-at-12.20.51---PM-1.png"
+              src="client/public/Screenshot-2025-09-24-at-12.20.51---PM-1.png"
               className="hidden dark:block w-full h-full object-cover lg:object-contain transform scale-110 lg:scale-105 object-center opacity-55 mix-blend-screen transition-all duration-500"
               draggable="false"
               fetchpriority="high"
