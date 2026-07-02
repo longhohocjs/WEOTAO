@@ -97,7 +97,7 @@ function App() {
       displayTech: "Super Retina XDR",
       chip: "Chip A19 Pro",
       battery: "Thời gian xem video Lên đến 31 giờ",
-      img: "D:\iphone-17-pro-cam-01.png", // Thay bằng ảnh thực tế
+      img: "https://i.postimg.cc/26X8Ywzw/iphone-17-pro-cam-01.png", // Thay bằng ảnh thực tế
     },
     {
       id: "plus",
