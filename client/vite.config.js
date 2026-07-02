@@ -4,6 +4,7 @@ import react from "@vitejs/plugin-react"; // 👉 Đổi từ react-refresh sang
 export default defineConfig({
   plugins: [react()],
   build: {
+    cssCodeSplit: false,
     modulePreload: {
       polyfill: false,
     },
