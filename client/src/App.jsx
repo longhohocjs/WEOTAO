@@ -358,7 +358,7 @@ function App() {
 
             {/* ẢNH DARK MODE: Ảnh góc nghiêng nghệ thuật phóng to căn giữa nguyên bản */}
             <img
-              src="https://i.postimg.cc/pT1XvZ2G/Screenshot-2025-09-24-at-12-20-51-PM-1.png"
+              src="https://i.postimg.cc/vBySBFmW/Screenshot-2025-09-24-at-12-20-51-PM-1.webp"
               className="hidden dark:block w-full h-full object-cover lg:object-contain transform scale-110 lg:scale-105 object-center opacity-55 mix-blend-screen transition-all duration-500"
               draggable="false"
               fetchpriority="high"
@@ -639,7 +639,7 @@ function App() {
                 {/* Ảnh Demo Màn hình */}
                 <div className="w-full h-60 rounded-xl bg-slate-100 dark:bg-neutral-950/50 border border-slate-200/40 dark:border-neutral-800/30 overflow-hidden relative">
                   <img
-                    src="https://www.amaysim.com.au/content/dam/amaysim/devices/phones/apple/features-iphone-17-pro/images/ai_ios_small.png"
+                    src="https://i.postimg.cc/bvhR00jy/ai-ios-small.webp"
                     alt="Display Demo"
                     className="w-full h-full object-fit"
                   />
