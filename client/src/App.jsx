@@ -153,7 +153,7 @@ function App() {
       id: "cosmic-std",
       name: "Cam Vũ Trụ",
       code: "#E65C00",
-      img: "https://24hstore.vn/images/products/2025/09/10/large/iphone-17-pro-cam-01.png", // Thay bằng ảnh Cam của bạn
+      img: "https://i.postimg.cc/26X8Ywzw/iphone-17-pro-cam-01.png", // Thay bằng ảnh Cam của bạn
     },
     {
       id: "blue-std",
@@ -358,7 +358,7 @@ function App() {
 
             {/* ẢNH DARK MODE: Ảnh góc nghiêng nghệ thuật phóng to căn giữa nguyên bản */}
             <img
-              src="client/public/Screenshot-2025-09-24-at-12.20.51---PM-1.png"
+              src="https://i.postimg.cc/pT1XvZ2G/Screenshot-2025-09-24-at-12-20-51-PM-1.png"
               className="hidden dark:block w-full h-full object-cover lg:object-contain transform scale-110 lg:scale-105 object-center opacity-55 mix-blend-screen transition-all duration-500"
               draggable="false"
               fetchpriority="high"
