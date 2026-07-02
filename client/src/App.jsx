@@ -455,95 +455,96 @@ function App() {
               Khám Phá Danh Mục iPhone 17 Series
             </h2>
           </div>
-
-          {loading ? (
-            <div className="text-center py-12 font-medium text-blue-600 animate-pulse">
-              Đang kết xuất danh mục Apple từ máy chủ...
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 min-h-[600px]">
-              {products.map((product) => {
-                const isFavorite = wishlist.some(
-                  (item) => item.id === product.id,
-                );
-                return (
-                  <div
-                    key={product.id}
-                    data-aos="fade-up"
-                    className="group relative rounded-3xl border border-gray-100 dark:border-neutral-800 bg-slate-50/50 dark:bg-neutral-900/20 overflow-hidden hover:bg-white dark:hover:bg-neutral-900/60 hover:-translate-y-1 hover:border-gray-200 dark:hover:border-neutral-700 hover:shadow-2xl hover:shadow-slate-200/50 dark:hover:shadow-black/40 transition-all duration-500 ease-out flex flex-col justify-between"
-                  >
-                    <div>
-                      <div className="relative h-100 w-full overflow-hidden bg-gray-100 dark:bg-neutral-800">
-                        <img
-                          src={product.image}
-                          alt={product.name}
-                          className="w-full h-full object-fit group-hover:scale-105 transition-transform duration-700 ease-out"
-                        />
-                        <button
-                          onClick={() => toggleWishlist(product)}
-                          className="absolute top-4 right-4 p-2 rounded-full bg-white/80 dark:bg-black/60 backdrop-blur-md cursor-pointer hover:scale-110 active:scale-95 hover:bg-white dark:hover:bg-black transition-all duration-300"
-                        >
-                          <Heart
-                            size={18}
-                            className={`transition-colors duration-300 ${
-                              isFavorite
-                                ? "fill-rose-500 text-rose-500"
-                                : "text-gray-600 dark:text-gray-300 group-hover:text-rose-400"
-                            }`}
+          <div className="min-h-[600px] w-full">
+            {loading ? (
+              <div className="text-center py-12 font-medium text-blue-600 animate-pulse">
+                Đang kết xuất danh mục Apple từ máy chủ...
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 min-h-[600px]">
+                {products.map((product) => {
+                  const isFavorite = wishlist.some(
+                    (item) => item.id === product.id,
+                  );
+                  return (
+                    <div
+                      key={product.id}
+                      data-aos="fade-up"
+                      className="group relative rounded-3xl border border-gray-100 dark:border-neutral-800 bg-slate-50/50 dark:bg-neutral-900/20 overflow-hidden hover:bg-white dark:hover:bg-neutral-900/60 hover:-translate-y-1 hover:border-gray-200 dark:hover:border-neutral-700 hover:shadow-2xl hover:shadow-slate-200/50 dark:hover:shadow-black/40 transition-all duration-500 ease-out flex flex-col justify-between"
+                    >
+                      <div>
+                        <div className="relative h-100 w-full overflow-hidden bg-gray-100 dark:bg-neutral-800">
+                          <img
+                            src={product.image}
+                            alt={product.name}
+                            className="w-full h-full object-fit group-hover:scale-105 transition-transform duration-700 ease-out"
                           />
-                        </button>
-                      </div>
+                          <button
+                            onClick={() => toggleWishlist(product)}
+                            className="absolute top-4 right-4 p-2 rounded-full bg-white/80 dark:bg-black/60 backdrop-blur-md cursor-pointer hover:scale-110 active:scale-95 hover:bg-white dark:hover:bg-black transition-all duration-300"
+                          >
+                            <Heart
+                              size={18}
+                              className={`transition-colors duration-300 ${
+                                isFavorite
+                                  ? "fill-rose-500 text-rose-500"
+                                  : "text-gray-600 dark:text-gray-300 group-hover:text-rose-400"
+                              }`}
+                            />
+                          </button>
+                        </div>
 
-                      <div className="p-6 space-y-3">
-                        <h3 className="text-xl font-bold flex items-center gap-2 text-slate-900 dark:text-white transition-colors duration-300 group-hover:text-blue-600 dark:group-hover:text-blue-400">
-                          {product.name}
-                        </h3>
-                        <p className="text-gray-500 dark:text-gray-400 text-sm line-clamp-2">
-                          {product.description}
-                        </p>
+                        <div className="p-6 space-y-3">
+                          <h3 className="text-xl font-bold flex items-center gap-2 text-slate-900 dark:text-white transition-colors duration-300 group-hover:text-blue-600 dark:group-hover:text-blue-400">
+                            {product.name}
+                          </h3>
+                          <p className="text-gray-500 dark:text-gray-400 text-sm line-clamp-2">
+                            {product.description}
+                          </p>
 
-                        <div className="pt-2 grid grid-cols-2 gap-2 text-xs text-gray-400">
-                          {product.specs &&
-                            Object.entries(product.specs).map(
-                              ([key, value]) => (
-                                <div
-                                  key={key}
-                                  className="bg-gray-100/70 dark:bg-neutral-800/40 p-2 rounded-lg transition-colors duration-300 group-hover:bg-gray-100 dark:group-hover:bg-neutral-800/70"
-                                >
-                                  <span className="font-semibold block text-gray-600 dark:text-gray-300">
-                                    {key}
-                                  </span>{" "}
-                                  <span className="text-gray-700 dark:text-gray-400">
-                                    {value}
-                                  </span>
-                                </div>
-                              ),
-                            )}
+                          <div className="pt-2 grid grid-cols-2 gap-2 text-xs text-gray-400">
+                            {product.specs &&
+                              Object.entries(product.specs).map(
+                                ([key, value]) => (
+                                  <div
+                                    key={key}
+                                    className="bg-gray-100/70 dark:bg-neutral-800/40 p-2 rounded-lg transition-colors duration-300 group-hover:bg-gray-100 dark:group-hover:bg-neutral-800/70"
+                                  >
+                                    <span className="font-semibold block text-gray-600 dark:text-gray-300">
+                                      {key}
+                                    </span>{" "}
+                                    <span className="text-gray-700 dark:text-gray-400">
+                                      {value}
+                                    </span>
+                                  </div>
+                                ),
+                              )}
+                          </div>
                         </div>
                       </div>
-                    </div>
 
-                    <div className="p-6 pt-0 border-t border-gray-100 dark:border-neutral-800/50 mt-4 flex items-center justify-between">
-                      <span className="text-xl font-extrabold text-slate-900 dark:text-white">
-                        {typeof product.price === "number"
-                          ? Intl.NumberFormat("vi-VN", {
-                              style: "currency",
-                              currency: "VND",
-                            }).format(product.price)
-                          : product.price}
-                      </span>
-                      <button
-                        onClick={() => addToCart(product)}
-                        className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900 text-white dark:bg-white dark:text-black font-semibold text-sm hover:scale-110 transition-all duration-300 active:scale-95 cursor-pointer shadow-md"
-                      >
-                        Chọn mua
-                      </button>
+                      <div className="p-6 pt-0 border-t border-gray-100 dark:border-neutral-800/50 mt-4 flex items-center justify-between">
+                        <span className="text-xl font-extrabold text-slate-900 dark:text-white">
+                          {typeof product.price === "number"
+                            ? Intl.NumberFormat("vi-VN", {
+                                style: "currency",
+                                currency: "VND",
+                              }).format(product.price)
+                            : product.price}
+                        </span>
+                        <button
+                          onClick={() => addToCart(product)}
+                          className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900 text-white dark:bg-white dark:text-black font-semibold text-sm hover:scale-110 transition-all duration-300 active:scale-95 cursor-pointer shadow-md"
+                        >
+                          Chọn mua
+                        </button>
+                      </div>
                     </div>
-                  </div>
-                );
-              })}
-            </div>
-          )}
+                  );
+                })}
+              </div>
+            )}
+          </div>
         </section>
         {/* 4. THÔNG SỐ KĨ THUẬT*/}
         <section
