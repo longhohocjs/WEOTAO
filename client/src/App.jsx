@@ -461,7 +461,7 @@ function App() {
               Đang kết xuất danh mục Apple từ máy chủ...
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 min-h-[600px]">
               {products.map((product) => {
                 const isFavorite = wishlist.some(
                   (item) => item.id === product.id,
