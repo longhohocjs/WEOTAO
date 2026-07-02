@@ -456,16 +456,15 @@ function App() {
             </h2>
           </div>
 
-          {loading ? (
+          {loading || products.length === 0 ? (
+            /* Hiện khung xương Skeleton nếu đang tải HOẶC khi API lỗi làm mảng rỗng */
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 min-h-[500px]">
               {[1, 2, 3].map((n) => (
                 <div
                   key={n}
                   className="rounded-3xl border border-gray-100 dark:border-neutral-800 bg-slate-50/50 dark:bg-neutral-900/20 h-[450px] animate-pulse"
                 >
-                  {/* Khung xương giả lập ảnh */}
                   <div className="h-64 w-full bg-gray-200 dark:bg-neutral-800 rounded-t-3xl" />
-                  {/* Khung xương giả lập chữ */}
                   <div className="p-6 space-y-3">
                     <div className="h-6 bg-gray-200 dark:bg-neutral-800 rounded w-2/3" />
                     <div className="h-4 bg-gray-200 dark:bg-neutral-800 rounded w-full" />
@@ -475,6 +474,7 @@ function App() {
               ))}
             </div>
           ) : (
+            /* Chỉ hiện danh sách này khi đã tải xong VÀ có dữ liệu sản phẩm thực tế */
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {products.map((product) => {
                 const isFavorite = wishlist.some(
@@ -486,12 +486,18 @@ function App() {
                     data-aos="fade-up"
                     className="group relative rounded-3xl border border-gray-100 dark:border-neutral-800 bg-slate-50/50 dark:bg-neutral-900/20 overflow-hidden hover:bg-white dark:hover:bg-neutral-900/60 hover:-translate-y-1 hover:border-gray-200 dark:hover:border-neutral-700 hover:shadow-2xl hover:shadow-slate-200/50 dark:hover:shadow-black/40 transition-all duration-500 ease-out flex flex-col justify-between"
                   >
+                    {/* ... Giữ nguyên toàn bộ phần thẻ card sản phẩm bên trong của bạn ... */}
                     <div>
                       <div className="relative h-100 w-full overflow-hidden bg-gray-100 dark:bg-neutral-800">
                         <img
                           src={product.image}
                           alt={product.name}
                           className="w-full h-full object-fit group-hover:scale-105 transition-transform duration-700 ease-out"
+                          onError={(e) => {
+                            e.target.onerror = null;
+                            e.target.src =
+                              "https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?w=500";
+                          }}
                         />
                         <button
                           onClick={() => toggleWishlist(product)}
