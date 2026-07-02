@@ -457,8 +457,22 @@ function App() {
           </div>
 
           {loading ? (
-            <div className="text-center py-12 font-medium text-blue-600 animate-pulse">
-              Đang kết xuất danh mục Apple từ máy chủ...
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 min-h-[500px]">
+              {[1, 2, 3].map((n) => (
+                <div
+                  key={n}
+                  className="rounded-3xl border border-gray-100 dark:border-neutral-800 bg-slate-50/50 dark:bg-neutral-900/20 h-[450px] animate-pulse"
+                >
+                  {/* Khung xương giả lập ảnh */}
+                  <div className="h-64 w-full bg-gray-200 dark:bg-neutral-800 rounded-t-3xl" />
+                  {/* Khung xương giả lập chữ */}
+                  <div className="p-6 space-y-3">
+                    <div className="h-6 bg-gray-200 dark:bg-neutral-800 rounded w-2/3" />
+                    <div className="h-4 bg-gray-200 dark:bg-neutral-800 rounded w-full" />
+                    <div className="h-4 bg-gray-200 dark:bg-neutral-800 rounded w-5/6" />
+                  </div>
+                </div>
+              ))}
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
