@@ -262,6 +262,8 @@ function App() {
         Camera: "48MP Dual Fusion",
         "Bộ nhớ": "256GB",
       },
+    },
+    {
       id: 2,
       name: "iPhone 17 Pro ",
       price: "32.899.000đ",
@@ -274,7 +276,9 @@ function App() {
         Camera: "48MP Dual Fusion",
         "Bộ nhớ": "256GB",
       },
+    },
 
+    {
       id: 3,
       name: "iPhone 17 Pro Max",
       price: "35.590.000đ",
