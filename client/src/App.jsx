@@ -231,24 +231,24 @@ function App() {
   // }, []);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetch("https://weotao-backend.onrender.com/products.php")
-      .then((res) => {
-        if (!res.ok) throw new Error("Lỗi kết nối máy chủ");
-        return res.json();
-      })
-      .then((data) => {
-        // Đảm bảo dữ liệu nhận về là một mảng
-        if (data && !data.error) {
-          setProducts(data);
-        }
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error("Lỗi kết nối API sản phẩm:", err);
-        setLoading(false);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch("https://weotao-backend.onrender.com/products.php")
+  //     .then((res) => {
+  //       if (!res.ok) throw new Error("Lỗi kết nối máy chủ");
+  //       return res.json();
+  //     })
+  //     .then((data) => {
+  //       // Đảm bảo dữ liệu nhận về là một mảng
+  //       if (data && !data.error) {
+  //         setProducts(data);
+  //       }
+  //       setLoading(false);
+  //     })
+  //     .catch((err) => {
+  //       console.error("Lỗi kết nối API sản phẩm:", err);
+  //       setLoading(false);
+  //     });
+  // }, []);
 
   const [products, setProducts] = useState([
     {
