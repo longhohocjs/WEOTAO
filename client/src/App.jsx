@@ -639,7 +639,7 @@ function App() {
                 {/* Ảnh Demo Màn hình */}
                 <div className="w-full h-60 rounded-xl bg-slate-100 dark:bg-neutral-950/50 border border-slate-200/40 dark:border-neutral-800/30 overflow-hidden relative">
                   <img
-                    src="https://i.postimg.cc/bvhR00jy/ai-ios-small.webp"
+                    src="https://i.postimg.cc/7hHYrZT4/ai-ios-small.jpg"
                     alt="Display Demo"
                     className="w-full h-full object-fit"
                   />
