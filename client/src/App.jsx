@@ -133,7 +133,7 @@ function App() {
   }, []);
 
   const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
+
   const [performanceMode, setPerformanceMode] = useState("stock");
 
   const [isCartModalOpen, setCartModalOpen] = useState(false);
@@ -229,6 +229,7 @@ function App() {
   //       setLoading(false);
   //     });
   // }, []);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch("https://weotao-backend.onrender.com/products.php")
@@ -248,6 +249,7 @@ function App() {
         setLoading(false);
       });
   }, []);
+
   const [products, setProducts] = useState([
     {
       id: 1,
