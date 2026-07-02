@@ -248,6 +248,47 @@ function App() {
         setLoading(false);
       });
   }, []);
+  const [products, setProducts] = useState([
+    {
+      id: 1,
+      name: "iPhone 17 ",
+      price: "23.290.000đ",
+      image:
+        "https://24hstore.vn/images/products/2025/09/10/large/iphone-17-xanh-lam-01.png", // Bạn thay bằng link ảnh của bạn
+      description: "Thiết kế siêu mỏng cánh thế hệ mới.",
+      specs: {
+        screen: "6.3 inch Super Retina XDR",
+        Chipset: "Apple A19",
+        Camera: "48MP Dual Fusion",
+        "Bộ nhớ": "256GB",
+      },
+      id: 2,
+      name: "iPhone 17 Pro ",
+      price: "32.899.000đ",
+      image:
+        "https://24hstore.vn/images/products/2025/09/10/large/iphone-17-pro-bac-01.png", // Bạn thay bằng link ảnh của bạn
+      description: "Khung viền Titanium cấp độ 5.",
+      specs: {
+        screen: "6.3 inch Super Retina XDR",
+        Chipset: "Apple A19 Pro",
+        Camera: "48MP Dual Fusion",
+        "Bộ nhớ": "256GB",
+      },
+
+      id: 3,
+      name: "iPhone 17 Pro Max",
+      price: "35.590.000đ",
+      image:
+        "https://24hstore.vn/images/products/2025/09/10/large/iphone-17-pro-max-xanh-01.png", // Bạn thay bằng link ảnh của bạn
+      description: "Đỉnh cao công nghệ thế hệ mới.",
+      specs: {
+        screen: "6.3 inch Super Retina XDR",
+        Chipset: "Apple A19 Pro Extreme",
+        Camera: "48MP Pro Fusion",
+        "Bộ nhớ": "256GB",
+      },
+    },
+  ]);
 
   const gradientStyles = {
     stock: "from-blue-500 via-indigo-500 to-purple-500",
